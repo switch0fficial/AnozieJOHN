@@ -636,8 +636,8 @@ body {
     pointer-events: none;
 }
 
-/* Neon Sign */
-.neon-sign {
+/* Neon Sign - Desktop/Tablet Position */
+.neon-sign-desktop {
     position: absolute;
     top: 15%;
     right: 5%;
@@ -647,6 +647,42 @@ body {
     text-shadow: var(--glow-strong);
     animation: neonFlicker 3s ease-in-out infinite;
     letter-spacing: 2px;
+}
+
+/* Neon Sign - Mobile Position */
+.neon-sign-mobile {
+    display: none;
+    position: relative;
+    font-family: var(--font-heading);
+    font-size: 0.9rem;
+    color: var(--white);
+    text-shadow: var(--glow-strong);
+    animation: neonFlicker 3s ease-in-out infinite;
+    letter-spacing: 2px;
+    margin: 1rem auto;
+    text-align: center;
+}
+
+/* Desktop/Tablet: show desktop neon sign, hide mobile version */
+@media (min-width: 769px) {
+    .neon-sign-desktop {
+        display: block;
+    }
+    
+    .neon-sign-mobile {
+        display: none;
+    }
+}
+
+/* Mobile: hide desktop neon sign, show mobile version */
+@media (max-width: 768px) {
+    .neon-sign-desktop {
+        display: none;
+    }
+    
+    .neon-sign-mobile {
+        display: block;
+    }
 }
 
 @keyframes neonFlicker {
