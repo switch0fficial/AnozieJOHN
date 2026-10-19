@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AnozieJOHN - Verified Blood Strike Creator & Hand-Drawn Artist</title>
+    <meta name="description" content="AnozieJOHN - Verified Blood Strike content creator and hand-drawn visual artist. Funny Blood Strike gameplay content and original hand-drawn artwork. No AI-generated art, ever.">
+    <meta name="theme-color" content="#05010F">
+    
+    <!-- Open Graph / Twitter -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="AnozieJOHN - Blood Strike Creator & Hand-Drawn Artist">
+    <meta property="og:description" content="Verified Blood Strike content creator and hand-drawn visual artist. Funny gameplay content and original artwork. No AI-generated art.">
+    <!-- Once hosted, replace with full URL: https://yourdomain.com/images/art-1.jpg -->
+    <meta property="og:image" content="images/art-1.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@400;500;600;700&family=Permanent+Marker&display=swap" rel="stylesheet">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/tab.png">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- ========== HOW TO ADD PICTURES (5 EASY STEPS) ========== -->
+    <!-- 
+    1. Open the "images" folder in your project directory
+    2. Add your image files with these exact names:
+       - pfp.png (for the profile picture in Hero)
+       - me.png (for the portrait in "The Artist" section)
+       - art-1.jpg, art-2.jpg, art-3.jpg, art-4.jpg, art-5.jpg (for your artwork gallery)
+    3. Use JPG or PNG format
+    4. Make sure images are at least 800px wide for best quality
+    5. Refresh this page and your images will appear automatically!
+    -->
+    
+    <!-- Boot Screen -->
+    <div id="boot-screen" class="boot-screen">
+        <div class="boot-text">BOOTING ANOZIEJOHN.EXE...</div>
+        <div class="boot-bar-container">
+            <div class="boot-bar"></div>
+        </div>
+        <button class="boot-skip" aria-label="Skip boot screen">SKIP</button>
+    </div>
+    
+    <!-- Cinematic Overlay (film grain, scanlines, vignette) -->
+    <div class="cinematic-overlay">
+        <div class="film-grain"></div>
+        <div class="scanlines"></div>
+        <div class="vignette"></div>
+        <div class="light-streak"></div>
+    </div>
+    
+    <!-- Progress Bar (health-bar style) -->
+    <div class="scroll-progress" aria-hidden="true"></div>
+    
+    <!-- Navbar -->
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+        <div class="nav-container">
+            <a href="#hero" class="nav-logo" aria-label="AnozieJOHN home">
+                <span class="logo-white">Anozie</span><span class="logo-gradient">JOHN</span>
+            </a>
+            <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="#hero" class="nav-link" data-section="hero">Home</a></li>
+                <li><a href="#about" class="nav-link" data-section="about">About</a></li>
+                <li><a href="#artist" class="nav-link" data-section="artist">Artist</a></li>
+                <li><a href="#artwork" class="nav-link" data-section="artwork">Artwork</a></li>
+                <li><a href="#bloodstrike" class="nav-link" data-section="bloodstrike">Blood Strike</a></li>
+                <li><a href="#contact" class="nav-link" data-section="contact">Contact</a></li>
+                <li><button class="sound-toggle" aria-label="Toggle sound" aria-pressed="false">
+                    <span class="sound-icon">🔇</span>
+                </button></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <!-- HERO Section -->
+    <section id="hero" class="section hero-section" data-colors="cyan,purple">
+        <div class="section-label">// 00 HERO</div>
+        
+        <!-- 3D Scene Container -->
+        <div class="hero-3d-scene">
+            <!-- Neon Grid Floor -->
+            <div class="neon-grid">
+                <div class="grid-line"></div>
+                <div class="grid-line"></div>
+                <div class="grid-line"></div>
+                <div class="grid-line"></div>
+                <div class="grid-line"></div>
+            </div>
+            
+            <!-- Parallax City Skyline -->
+            <div class="city-skyline" id="city-skyline"></div>
+            
+            <!-- Floating 3D Shapes -->
+            <div class="floating-shapes">
+                <div class="shape cube" data-shape="cube"></div>
+                <div class="shape ring" data-shape="ring"></div>
+                <div class="shape pyramid" data-shape="pyramid"></div>
+            </div>
+            
+            <!-- Glow Particles Canvas -->
+            <canvas id="particles-canvas" class="particles-canvas" aria-hidden="true"></canvas>
+            
+            <!-- Flickering Neon Sign -->
+            <div class="neon-sign">NO AI • HAND DRAWN ONLY</div>
+        </div>
+        
+        <!-- Hero Content -->
+        <div class="hero-content">
+            <h1 class="hero-title">
+                <span class="title-glitch">Anozie</span><span class="title-gradient">JOHN</span>
+            </h1>
+            <p class="hero-subtitle" id="typewriter"></p>
+            
+            <!-- Profile Picture -->
+            <div class="profile-container">
+                <div class="profile-frame" role="button" tabindex="0" aria-label="View profile picture">
+                    <div class="profile-ring"></div>
+                    <img src="images/pfp.png" alt="AnozieJOHN profile picture" class="profile-img" loading="lazy" draggable="false">
+                    <div class="profile-hud">
+                        <span class="hud-corner tl"></span>
+                        <span class="hud-corner tr"></span>
+                        <span class="hud-corner bl"></span>
+                        <span class="hud-corner br"></span>
+                    </div>
+                    <div class="verified-badge">✔ VERIFIED</div>
+                </div>
+            </div>
+            
+            <!-- Badge Strip -->
+            <div class="badge-strip">
+                <span class="badge">100% Hand-Drawn</span>
+                <span class="badge-divider">·</span>
+                <span class="badge">0% AI</span>
+                <span class="badge-divider">·</span>
+                <span class="badge">∞ Funny Clips</span>
+            </div>
+            
+            <!-- CTA Buttons -->
+            <div class="hero-buttons">
+                <a href="https://youtube.com/@anoziejohngames?si=Tisf5urhJYTHWfj4" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                    <span class="btn-icon">▶</span> Subscribe on YouTube
+                </a>
+                <a href="https://www.tiktok.com/@anoziejohn_bs?_r=1&_t=ZS-9AgpYqLAafA" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                    <span class="btn-icon">♪</span> Follow on TikTok
+                </a>
+                <a href="#artwork" class="btn btn-tertiary">
+                    <span class="btn-icon">🎨</span> See My Art
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- 01 ABOUT Section -->
+    <section id="about" class="section about-section" data-colors="pink,orange">
+        <div class="section-label">// 01 ABOUT</div>
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            
+            <div class="about-grid">
+                <div class="about-intro">
+                    <p class="intro-text">I'm <strong>Anozie John</strong>, a verified Blood Strike content creator and a really good artist.</p>
+                    <p class="intro-text">I create funny Blood Strike content and share my journey as a gamer and visual artist.</p>
+                </div>
+                
+                <div class="card art-style-card">
+                    <div class="card-inner">
+                        <h3 class="card-title">Art Style</h3>
+                        <p class="card-text">
+                            <span class="hand-drawn-accent">hand-drawn</span> art. Every artwork from me is drawn by hand ✍️. You will never get an AI-generated picture from me.
+                        </p>
+                        <svg class="doodle-underline" viewBox="0 0 200 20" aria-hidden="true">
+                            <path d="M5,15 Q50,5 100,15 T195,10" fill="none" stroke="#FF2E97" stroke-width="3" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                </div>
+                
+                <div class="card content-style-card">
+                    <div class="card-inner">
+                        <h3 class="card-title">Content Style</h3>
+                        <p class="card-text">Funny Blood Strike content that keeps you entertained and coming back for more.</p>
+                    </div>
+                </div>
+                
+                <div class="card uid-card">
+                    <div class="card-inner">
+                        <h3 class="card-title">Blood Strike UID (EU-MENA)</h3>
+                        <div class="uid-display">
+                            <span class="uid-number" id="uid-number">568847040817</span>
+                            <button class="copy-btn" id="copy-uid" aria-label="Copy UID">
+                                <span class="copy-icon">📋</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- 02 ARTIST Section -->
+    <section id="artist" class="section artist-section" data-colors="indigo,blue">
+        <div class="section-label">// 02 ARTIST</div>
+        <div class="container">
+            <h2 class="section-title">The artist 👨‍🎨 and content creator behind the screen</h2>
+            
+            <div class="artist-portrait-container">
+                <div class="artist-card" role="button" tabindex="0" aria-label="View full portrait">
+                    <div class="artist-frame">
+                        <img src="images/me.png" alt="Anozie John - The artist and content creator" class="artist-img" loading="lazy" draggable="false">
+                        <div class="artist-hud">
+                            <span class="hud-corner tl"></span>
+                            <span class="hud-corner tr"></span>
+                            <span class="hud-corner bl"></span>
+                            <span class="hud-corner br"></span>
+                        </div>
+                    </div>
+                    <div class="artist-info">
+                        <h3 class="artist-name">Anozie John</h3>
+                        <div class="artist-tags">
+                            <span class="tag">Artist</span>
+                            <span class="tag">Creator</span>
+                            <span class="tag">Blood Strike</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- 03 ARTWORK Section -->
+    <section id="artwork" class="section artwork-section" data-colors="full">
+        <div class="section-label">// 03 ARTWORK</div>
+        <div class="container">
+            <h2 class="section-title">My Artwork</h2>
+            <p class="section-subtitle">Every piece is <span class="hand-drawn-accent">hand-drawn</span> with passion ✍️</p>
+            
+            <div class="artwork-grid">
+                <!-- ART SLOT #01 -->
+                <div class="art-card" data-index="0" role="button" tabindex="0" aria-label="View artwork #1">
+                    <div class="art-card-inner">
+                        <div class="art-number">#01</div>
+                        <div class="art-ribbon">HAND-DRAWN ✍️</div>
+                        <img src="images/art-1.png" alt="Hand-drawn artwork #1 by AnozieJOHN" class="art-img" loading="lazy" draggable="false">
+                        <div class="art-caption">
+                            <span class="caption-text">Artwork #1</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- ART SLOT #02 -->
+                <div class="art-card" data-index="1" role="button" tabindex="0" aria-label="View artwork #2">
+                    <div class="art-card-inner">
+                        <div class="art-number">#02</div>
+                        <div class="art-ribbon">HAND-DRAWN ✍️</div>
+                        <img src="images/art-2.png" alt="Hand-drawn artwork #2 by AnozieJOHN" class="art-img" loading="lazy" draggable="false">
+                        <div class="art-caption">
+                            <span class="caption-text">Artwork #2</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- ART SLOT #03 -->
+                <div class="art-card" data-index="2" role="button" tabindex="0" aria-label="View artwork #3">
+                    <div class="art-card-inner">
+                        <div class="art-number">#03</div>
+                        <div class="art-ribbon">HAND-DRAWN ✍️</div>
+                        <img src="images/art-3.png" alt="Hand-drawn artwork #3 by AnozieJOHN" class="art-img" loading="lazy" draggable="false">
+                        <div class="art-caption">
+                            <span class="caption-text">Artwork #3</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- ART SLOT #04 -->
+                <div class="art-card" data-index="3" role="button" tabindex="0" aria-label="View artwork #4">
+                    <div class="art-card-inner">
+                        <div class="art-number">#04</div>
+                        <div class="art-ribbon">HAND-DRAWN ✍️</div>
+                        <img src="images/art-4.jpg" alt="Hand-drawn artwork #4 by AnozieJOHN" class="art-img" loading="lazy" draggable="false">
+                        <div class="art-caption">
+                            <span class="caption-text">Artwork #4</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- ART SLOT #05 -->
+                <div class="art-card" data-index="4" role="button" tabindex="0" aria-label="View artwork #5">
+                    <div class="art-card-inner">
+                        <div class="art-number">#05</div>
+                        <div class="art-ribbon">HAND-DRAWN ✍️</div>
+                        <img src="images/art-5.png" alt="Hand-drawn artwork #5 by AnozieJOHN" class="art-img" loading="lazy" draggable="false">
+                        <div class="art-caption">
+                            <span class="caption-text">Artwork #5</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- 04 BLOOD STRIKE Section -->
+    <section id="bloodstrike" class="section bloodstrike-section" data-colors="red,orange,yellow">
+        <div class="section-label">// 04 BLOOD STRIKE HQ</div>
+        <div class="container">
+            <h2 class="section-title">Blood Strike HQ</h2>
+            
+            <!-- Featured Video (optional - controlled by FEATURED_YOUTUBE_ID in script.js) -->
+            <div class="featured-video" id="featured-video">
+                <div class="tv-frame">
+                    <div class="tv-screen">
+                        <div class="tv-content" id="tv-content"></div>
+                    </div>
+                    <div class="tv-stand"></div>
+                </div>
+            </div>
+            
+            <!-- Kill Feed Ticker -->
+            <div class="kill-feed" id="kill-feed" aria-hidden="true">
+                <div class="kill-feed-content">
+                    <span class="kill-text">AnozieJOHN eliminated Boredom</span>
+                </div>
+            </div>
+            
+            <div class="bs-grid">
+                <!-- TikTok Card -->
+                <div class="bs-card tiktok-card">
+                    <div class="card-inner">
+                        <div class="sticker">FUNNY CONTENT</div>
+                        <h3 class="card-title">TikTok</h3>
+                        <p class="card-text">Follow my TikTok for more art and Blood Strike gameplay</p>
+                        <a href="https://www.tiktok.com/@anoziejohn_bs?_r=1&_t=ZS-9AgpYqLAafA" target="_blank" rel="noopener noreferrer" class="btn btn-neon">
+                            <span class="btn-icon">♪</span> Follow on TikTok
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- YouTube Card -->
+                <div class="bs-card youtube-card">
+                    <div class="card-inner">
+                        <div class="sticker">FUNNY CONTENT</div>
+                        <h3 class="card-title">YouTube</h3>
+                        <p class="card-text">Subscribe to my YouTube for epic gameplay and art content</p>
+                        <a href="https://youtube.com/@anoziejohngames?si=Tisf5urhJYTHWfj4" target="_blank" rel="noopener noreferrer" class="btn btn-neon">
+                            <span class="btn-icon">▶</span> Subscribe to YouTube
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- 05 CONTACT Section -->
+    <section id="contact" class="section contact-section" data-colors="cyan,pink">
+        <div class="section-label">// 05 CONTACT</div>
+        <div class="container">
+            <h2 class="section-title">Business Enquiries</h2>
+            
+            <div class="contact-grid">
+                <!-- Email Card -->
+                <div class="contact-card">
+                    <div class="card-inner">
+                        <h3 class="card-title">Email</h3>
+                        <a href="mailto:reasureJohngames@gmail.com" class="contact-link">reasureJohngames@gmail.com</a>
+                        <a href="mailto:reasureJohngames@gmail.com" class="btn btn-neon">
+                            <span class="btn-icon">✉</span> Send Email
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- WhatsApp Card -->
+                <div class="contact-card whatsapp-card">
+                    <div class="card-inner">
+                        <h3 class="card-title">WhatsApp</h3>
+                        <p class="phone-number">+233 55 407 6014</p>
+                        <p class="business-note">Please DM my WhatsApp for business only.</p>
+                        <a href="https://wa.me/233554076014?text=Hello%20Anozie%20John%2C%20I%27m%20contacting%20you%20about%20business." target="_blank" rel="noopener noreferrer" class="btn btn-neon">
+                            <span class="btn-icon">💬</span> DM on WhatsApp
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Workplace Card -->
+                <div class="contact-card workplace-card">
+                    <div class="card-inner">
+                        <h3 class="card-title">My Workplace</h3>
+                        <div class="radar-container">
+                            <div class="radar-circle">
+                                <div class="radar-pin"></div>
+                                <div class="radar-wave"></div>
+                            </div>
+                        </div>
+                        <a href="https://maps.app.goo.gl/TLoAaiEVaV1hzoDN6?g_st=ac" target="_blank" rel="noopener noreferrer" class="btn btn-neon">
+                            <span class="btn-icon">📍</span> Open in Google Maps
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <span class="logo-white">Anozie</span><span class="logo-gradient">JOHN</span>
+                </div>
+                <div class="footer-social">
+                    <a href="https://www.tiktok.com/@anoziejohn_bs?_r=1&_t=ZS-9AgpYqLAafA" target="_blank" rel="noopener noreferrer" aria-label="TikTok" class="social-link">TikTok</a>
+                    <a href="https://youtube.com/@anoziejohngames?si=Tisf5urhJYTHWfj4" target="_blank" rel="noopener noreferrer" aria-label="YouTube" class="social-link">YouTube</a>
+                    <a href="mailto:reasureJohngames@gmail.com" aria-label="Email" class="social-link">Email</a>
+                </div>
+                <button class="back-to-top" id="back-to-top" aria-label="Back to top">
+                    <span>↑</span> Top
+                </button>
+            </div>
+            <p class="footer-copy">© <span id="current-year"></span> AnozieJOHN. All artwork is hand-drawn by Anozie John. No AI-generated art.</p>
+        </div>
+    </footer>
+    
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox" role="dialog" aria-label="Image viewer" aria-hidden="true">
+        <button class="lightbox-close" aria-label="Close lightbox">×</button>
+        <button class="lightbox-prev" aria-label="Previous image">←</button>
+        <button class="lightbox-next" aria-label="Next image">→</button>
+        <div class="lightbox-content">
+            <img src="" alt="" class="lightbox-img" id="lightbox-img">
+            <div class="lightbox-watermark">AnozieJOHN ©</div>
+        </div>
+        <div class="lightbox-caption" id="lightbox-caption"></div>
+        <div class="lightbox-counter" id="lightbox-counter"></div>
+    </div>
+    
+    <!-- Toast Notification -->
+    <div class="toast" id="toast" role="alert" aria-live="polite"></div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
