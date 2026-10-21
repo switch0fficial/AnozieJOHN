@@ -490,54 +490,6 @@ function showToast(message) {
     }, 3000);
 }
 
-// ========== SOUND TOGGLE (Web Audio API) ==========
-const soundToggle = document.querySelector('.sound-toggle');
-const soundIcon = document.querySelector('.sound-icon');
-let soundEnabled = false;
-let audioContext = null;
-
-function initAudio() {
-    if (!audioContext) {
-        audioContext = new (window.AudioContext || window.webkitAudioContext)();
-    }
-}
-
-function playBlip() {
-    if (!soundEnabled || !audioContext) return;
-    
-    const oscillator = audioContext.createOscillator();
-    const gainNode = audioContext.createGain();
-    
-    oscillator.connect(gainNode);
-    gainNode.connect(audioContext.destination);
-    
-    oscillator.frequency.value = 800 + Math.random() * 400;
-    oscillator.type = 'sine';
-    
-    gainNode.gain.setValueAtTime(0.1, audioContext.currentTime);
-    gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.1);
-    
-    oscillator.start(audioContext.currentTime);
-    oscillator.stop(audioContext.currentTime + 0.1);
-}
-
-soundToggle.addEventListener('click', () => {
-    soundEnabled = !soundEnabled;
-    soundToggle.setAttribute('aria-pressed', soundEnabled);
-    soundIcon.textContent = soundEnabled ? '🔊' : '🔇';
-    
-    if (soundEnabled) {
-        initAudio();
-        playBlip();
-    }
-});
-
-// Add sound to buttons
-document.querySelectorAll('.btn, .nav-link, .card, .art-card').forEach(el => {
-    el.addEventListener('mouseenter', playBlip);
-    el.addEventListener('click', playBlip);
-});
-
 // ========== FEATURED YOUTUBE VIDEO ==========
 const featuredVideo = document.getElementById('featured-video');
 const tvContent = document.getElementById('tv-content');
